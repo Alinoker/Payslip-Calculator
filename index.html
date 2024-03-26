@@ -5,34 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+
     <script>
-    //My fist pseudocode with the help of Theo (ChatGpt) <3
+    //My fist pseudocode /o/ thank you <3 Pat and Theo <3
     //User writes down the number of late/evenight/night/sundays shifts + bank holiday
-    
     //Prompt the user to input the number of late, evenight, night, Sundays shifts, and bank holiday
-    Prompt user for late shifts
-    Prompt user for evenight shifts
-    Prompt user for night shifts
-    Prompt user for Sunday shifts
-    Prompt user for bank holidays
-    
+    function calculatePayslip() {
+
+    //Prompt user for late shifts/evenight/night/Sunday shifts
+    //Prompt user for bank holidays. Fixed amount.
+    var late = parseFloat(document.getElementById("late").value);
+    var evenight  = parseFloat(document.getElementById("evenight").value);
+    var night = parseFloat(document.getElementById("night").value);
+    var sundayMorn = parseFloat(document.getElementById("sundayMorn").value);
+    var sundayLate = parseFloat(document.getElementById("sundayLate").value);
+    var sundayEvenight = parseFloat(document.getElementById("sundayEvenight").value);
+    var bankHoliday = 122.27;
+
     // Calculate earnings for each type of shift
-    lateEarnings = late * 2 * 3.06
-    evenightEarnings = evenight * 4 * 3.06
-    nightEarnings = night * 8 * 5.35
-    sundayDayEarnings = sunday * 8 * 3.06
-    sundayLateEarnings = X * 8 * 3.06 // For late Sunday shifts
+    var lateEarnings = (late * 2) * 3.06;
+    var evenightEarnings = (evenight * 4) * 3.06;
+    var nightEarnings = (night * 8) * 5.35;
+    var sundayMornEarnings = (sundayMorn * 8) * 3.06;    // For  Sunday shifts
+    var sundayLateEarnings = (sundayLate * 8) * 3.06;
+    var sundaEvenightEarnings = (sundayEvenight * 8) * 5.35;
+
+    //sundaylate??? sundayvenight???
     
     // Calculate total earnings
-    totalEarnings = lateEarnings + evenightEarnings + nightEarnings + sundayDayEarnings + sundayLateEarnings + bankHoliday
+    var totalEarnings = (lateEarnings + evenightEarnings + nightEarnings + sundayMornEarnings + sundayLateEarnings + sundayEvenightEarnings + bankHoliday);
     
     // Add additional fixed amount
-    totalEarnings += 3200
+    totalEarnings += 3200;
     
     // Output the total earnings
-    Display totalEarnings
-    
+    document.getElementById("result").value = totalEarnings.toFixed(2) // Formatting to two decimal places
     </script>
+
+<body>
+<center>
+<h1>Payslip Calculator</h1>
+<table>
+    <tr>
+        <td>Late </td>
+        <td><input type="text" id="late" maxlength="5"></td>
+    </tr>
+
+    <tr>
+        <td>Evenight</td>
+        <td><input type="text" id="evenight" maxlength="5"></td>
+    </tr>
+
+    <tr>
+        <td>Night </td>
+        <td><input type="text" id="night" maxlength="5"></td>
+    </tr>
+
+    <tr>
+        <td>Sunday Morn </td>
+        <td><input type="text" id="sunday" maxlength="5"></td>
+    </tr>
+
+    <tr>
+        <td>Sunday Late </td>
+        <td><input type="text" id="sundayLate" maxlength="5"></td>
+    </tr>
+
+    <tr>
+        <td>Sunday Evenight</td>
+        <td><input type="text" id="sundayEvenight" maxlength="5"></td>
+    </tr>
+
+    <tr>
+        <td>Bank H</td>
+        <td><input type="text" id="bankHoliday" maxlength="5"></td>
+    </tr>    
+
+    <tr>
+        <td>Total</td>
+        <td><input type="text" id="totalEarnings" maxlength="5"></td>
+    </tr> 
+
+</table>
+
+</center>
+
 </body>
 </html>
