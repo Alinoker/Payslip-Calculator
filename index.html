@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
     <script>
     //My fist pseudocode /o/ thank you <3 Pat and Theo <3
     //User writes down the number of late/evenight/night/sundays shifts + bank holiday
     //Prompt the user to input the number of late, evenight, night, Sundays shifts, and bank holiday
+   
     function calculatePayslip() {
 
     //Prompt user for late shifts/evenight/night/Sunday shifts
@@ -33,13 +33,14 @@
     //sundaylate??? sundayvenight???
     
     // Calculate total earnings
-    var totalEarnings = (lateEarnings + evenightEarnings + nightEarnings + sundayMornEarnings + sundayLateEarnings + sundayEvenightEarnings + bankHoliday);
+    var totalEarnings = lateEarnings + evenightEarnings + nightEarnings + sundayMornEarnings + sundayLateEarnings + sundayEvenightEarnings + bankHolidayEarnings;
     
     // Add additional fixed amount
-    totalEarnings += 3200;
+    totalEarnings  += 3200;
     
     // Output the total earnings
-    document.getElementById("result").value = totalEarnings.toFixed(2) // Formatting to two decimal places
+    document.getElementById("totalEarnings").value = totalEarnings.toFixed(2);
+    }
     </script>
 
 <body>
@@ -63,7 +64,7 @@
 
     <tr>
         <td>Sunday Morn </td>
-        <td><input type="text" id="sunday" maxlength="5"></td>
+        <td><input type="text" id="sundayMorn" maxlength="5"></td>
     </tr>
 
     <tr>
@@ -77,17 +78,17 @@
     </tr>
 
     <tr>
-        <td>Bank H</td>
+        <td>Bank Holiday</td>
         <td><input type="text" id="bankHoliday" maxlength="5"></td>
     </tr>    
 
     <tr>
-        <td>Total</td>
-        <td><input type="text" id="totalEarnings" maxlength="5"></td>
+        <td>Total Earnings</td>
+        <td><input type="text" id="totalEarnings" maxlength="10"></td>
     </tr> 
 
 </table>
-
+<button onclick="calculatePayslip()">Calculate Payslip</button>
 </center>
 
 </body>
