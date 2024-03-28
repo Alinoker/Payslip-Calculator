@@ -28,12 +28,13 @@
     var nightEarnings = (night * 8) * 5.35;
     var sundayMornEarnings = (sundayMorn * 8) * 3.06;    // For  Sunday shifts
     var sundayLateEarnings = (sundayLate * 8) * 3.06;
-    var sundaEvenightEarnings = (sundayEvenight * 8) * 5.35;
+    var sundayEvenightEarnings = (sundayEvenight * 8) * 5.35;
 
     //sundaylate??? sundayvenight???
     
     // Calculate total earnings
-    var totalEarnings = lateEarnings + evenightEarnings + nightEarnings + sundayMornEarnings + sundayLateEarnings + sundayEvenightEarnings + bankHolidayEarnings;
+    var totalEarnings = lateEarnings + evenightEarnings + nightEarnings + sundayMornEarnings + 
+    sundayLateEarnings + sundayEvenightEarnings + bankHoliday;
     
     // Add additional fixed amount
     totalEarnings  += 3200;
