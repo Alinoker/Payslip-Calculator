@@ -46,6 +46,7 @@ div button {
 div button: hover {
     background-color: #ccc;
 }
+
 div button: focus {
     outline: 2px solid #333;
 }

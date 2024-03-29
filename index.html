@@ -1,96 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-    <script>
+  </head>
+  <script>
     //My fist pseudocode /o/ thank you <3 Pat and Theo <3
-    //User writes down the number of late/evenight/night/sundays shifts + bank holiday
-    //Prompt the user to input the number of late, evenight, night, Sundays shifts, and bank holiday
-   
+    // 1. Get the number of days from text input fields (HTML)
+    // 2. Convert the values from string to numbers
+    // 3. Calculate
+    // 4. Display the result
+
+    // 2. Convert the values from string to numbers
     function calculatePayslip() {
+      var late = +document.getElementById("late").value;
+      var evenight = +document.getElementById("evenight").value;
+      var night = +document.getElementById("night").value;
+      var sundayMorn = +document.getElementById("sundayMorn").value;
+      var sundayLate = +document.getElementById("sundayLate").value;
+      var sundayEvenight = +document.getElementById("sundayEvenight").value;
+      var bankHoliday = +document.getElementById("bankHoliday").value;
 
-    //Prompt user for late shifts/evenight/night/Sunday shifts
-    //Prompt user for bank holidays. Fixed amount.
-    var late = parseFloat(document.getElementById("late").value);
-    var evenight  = parseFloat(document.getElementById("evenight").value);
-    var night = parseFloat(document.getElementById("night").value);
-    var sundayMorn = parseFloat(document.getElementById("sundayMorn").value);
-    var sundayLate = parseFloat(document.getElementById("sundayLate").value);
-    var sundayEvenight = parseFloat(document.getElementById("sundayEvenight").value);
-    var bankHoliday = 122.27;
+      //Boris simple code instead all of my code D:
+      //shiftIds.map(id => +document.getElementById(id).value)
+      //['late', 'evenight', 'night', 'sundayMorn', 'sundayLate', 'sundayEvenight'].map(id => +document.getElementById(id).value)
 
-    // Calculate earnings for each type of shift
-    var lateEarnings = (late * 2) * 3.06;
-    var evenightEarnings = (evenight * 4) * 3.06;
-    var nightEarnings = (night * 8) * 5.35;
-    var sundayMornEarnings = (sundayMorn * 8) * 3.06;    // For  Sunday shifts
-    var sundayLateEarnings = (sundayLate * 8) * 3.06;
-    var sundayEvenightEarnings = (sundayEvenight * 8) * 5.35;
+      console.log(typeof late, late);
 
-    //sundaylate??? sundayvenight???
-    
-    // Calculate total earnings
-    var totalEarnings = lateEarnings + evenightEarnings + nightEarnings + sundayMornEarnings + 
-    sundayLateEarnings + sundayEvenightEarnings + bankHoliday;
-    
-    // Add additional fixed amount
-    totalEarnings  += 3200;
-    
-    // Output the total earnings
-    document.getElementById("totalEarnings").value = totalEarnings.toFixed(2);
+      //3. Calculate
+      var lateEarnings = late * 2 * 3.06;
+      var evenightEarnings = evenight * 4 * 3.06;
+      var nightEarnings = night * 8 * 5.35;
+      var sundayMornEarnings = sundayMorn * 8 * 3.06;
+      var sundayLateEarnings = sundayLate * 8 * 3.06;
+      var sundayEvenightEarnings = sundayEvenight * 8 * 5.35;
+      var bankHoliday = 127.2;
+
+      //sundaylate??? sundayvenight???
+
+      var totalEarnings =
+        lateEarnings +
+        evenightEarnings +
+        nightEarnings +
+        sundayMornEarnings +
+        sundayLateEarnings +
+        sundayEvenightEarnings +
+        bankHoliday;
+
+      console.log(totalEarnings);
+
+      //Add salary fixed amount
+      totalEarnings += 2649.17;
+
+      //4. Display the result
+      document.getElementById("totalEarnings").value = totalEarnings.toFixed(2);
     }
-    </script>
+  </script>
 
-<body>
-<center>
-<h1>Payslip Calculator</h1>
-<table>
-    <tr>
-        <td>Late </td>
-        <td><input type="text" id="late" maxlength="5"></td>
-    </tr>
+  <body>
+    <center>
+      <h1>Payslip Calculator</h1>
+      <table>
+        <tr>
+          <td>Late</td>
+          <td><input type="text" id="late" maxlength="5" /></td>
+        </tr>
 
-    <tr>
-        <td>Evenight</td>
-        <td><input type="text" id="evenight" maxlength="5"></td>
-    </tr>
+        <tr>
+          <td>Evenight</td>
+          <td><input type="text" id="evenight" maxlength="5" /></td>
+        </tr>
 
-    <tr>
-        <td>Night </td>
-        <td><input type="text" id="night" maxlength="5"></td>
-    </tr>
+        <tr>
+          <td>Night</td>
+          <td><input type="text" id="night" maxlength="5" /></td>
+        </tr>
 
-    <tr>
-        <td>Sunday Morn </td>
-        <td><input type="text" id="sundayMorn" maxlength="5"></td>
-    </tr>
+        <tr>
+          <td>Sunday Morn</td>
+          <td><input type="text" id="sundayMorn" maxlength="5" /></td>
+        </tr>
 
-    <tr>
-        <td>Sunday Late </td>
-        <td><input type="text" id="sundayLate" maxlength="5"></td>
-    </tr>
+        <tr>
+          <td>Sunday Late</td>
+          <td><input type="text" id="sundayLate" maxlength="5" /></td>
+        </tr>
 
-    <tr>
-        <td>Sunday Evenight</td>
-        <td><input type="text" id="sundayEvenight" maxlength="5"></td>
-    </tr>
+        <tr>
+          <td>Sunday Evenight</td>
+          <td><input type="text" id="sundayEvenight" maxlength="5" /></td>
+        </tr>
 
-    <tr>
-        <td>Bank Holiday</td>
-        <td><input type="text" id="bankHoliday" maxlength="5"></td>
-    </tr>    
+        <tr>
+          <td>Bank Holiday</td>
+          <td><input type="text" id="bankHoliday" /></td>
+        </tr>
 
-    <tr>
-        <td>Total Earnings</td>
-        <td><input type="text" id="totalEarnings" maxlength="10"></td>
-    </tr> 
-
-</table>
-<button onclick="calculatePayslip()">Calculate Payslip</button>
-</center>
-
-</body>
+        <tr>
+          <td>Total Earnings</td>
+          <td><input type="text" id="totalEarnings" maxlength="10" /></td>
+        </tr>
+      </table>
+      <button onclick="calculatePayslip()">Calculate Payslip</button>
+    </center>
+  </body>
 </html>
