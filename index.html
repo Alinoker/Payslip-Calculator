@@ -21,6 +21,12 @@
       var sundayLate = +document.getElementById("sundayLate").value;
       var sundayEvenight = +document.getElementById("sundayEvenight").value;
       var bankHoliday = +document.getElementById("bankHoliday").value;
+      console.log("bankHoliday default value", bankHoliday);
+
+      //Pat I still haven't learned how to make the console log properly
+      // what do you mean?
+      //is console log, for we can see a bug or if its working properly?
+      //Im in the discord call
 
       //Boris simple code instead all of my code D:
       //shiftIds.map(id => +document.getElementById(id).value)
@@ -30,15 +36,16 @@
 
       //3. Calculate
       var lateEarnings = late * 2 * 3.06;
-      var evenightEarnings = evenight * 4 * 3.06;
-      var nightEarnings = night * 8 * 5.35;
+      var evenightEarnings = evenight * 4 * 3.06; //ok
+      var nightEarnings = night * 8 * 5.35; //ok
       var sundayMornEarnings = sundayMorn * 8 * 3.06;
       var sundayLateEarnings = sundayLate * 8 * 3.06;
       var sundayEvenightEarnings = sundayEvenight * 8 * 5.35;
-      var bankHoliday = 127.2;
+      var bankHolidayEarnings = 127.2 * bankHoliday;
+      console.log("bankHolidayEarnings 122.27 value", bankHolidayEarnings);
 
-      //sundaylate??? sundayvenight???
-
+      // bankholiday = 3
+      // bankholiday = 127.2
       var totalEarnings =
         lateEarnings +
         evenightEarnings +
@@ -46,7 +53,7 @@
         sundayMornEarnings +
         sundayLateEarnings +
         sundayEvenightEarnings +
-        bankHoliday;
+        bankHolidayEarnings;
 
       console.log(totalEarnings);
 
@@ -102,7 +109,13 @@
           <td><input type="text" id="totalEarnings" maxlength="10" /></td>
         </tr>
       </table>
-      <button onclick="calculatePayslip()">Calculate Payslip</button>
+      <button onclick="calculatePayslip()">💸Calculate Payslip💸</button>
+      <p>
+        without tax: <br />
+        <a href="https://salaryaftertax.com/ie/salary-calculator"
+          >https://salaryaftertax.com/ie/salary-calculator</a
+        >
+      </p>
     </center>
   </body>
 </html>
